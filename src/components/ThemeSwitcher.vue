@@ -7,21 +7,9 @@
     </ion-card-header>
       <ion-list>
           <ion-radio-group v-model="theme">
-            <ion-item>
-              <ion-label>{{$t('theme_default')}}</ion-label>
-              <ion-radio type="radio" id="default" value="default"/>
-            </ion-item>
-            <ion-item>
-              <ion-label>{{$t('theme_custom')}}</ion-label>
-              <ion-radio type="radio" id="custom" value="custom"/>
-            </ion-item>
-            <ion-item>
-              <ion-label>{{$t('theme_dark')}}</ion-label>
-              <ion-radio type="radio" id="dark" value="dark"/>
-            </ion-item>
-            <ion-item>
-              <ion-label>{{$t('theme_light')}}</ion-label>
-              <ion-radio type="radio" id="light" value="light"/>
+            <ion-item v-for="(theme, i) in themes" :key="`Theme${i}`">
+              <ion-label>{{$t('theme_' + theme)}}</ion-label>
+              <ion-radio type="radio" :id="theme" :value="theme"/>
             </ion-item>
           </ion-radio-group>
       </ion-list>
@@ -45,7 +33,8 @@ export default {
   },
   data() {
     return {
-      theme: ''
+      theme: '',
+      themes: ['default', 'custom', 'dark', 'light']
     }
   },
   beforeMount() {
