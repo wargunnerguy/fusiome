@@ -17,11 +17,11 @@
             </ion-item>
             <ion-item>
               <ion-label>{{$t('theme_dark')}}</ion-label>
-              <ion-radio type="radio" id="dark" value="custom"/>
+              <ion-radio type="radio" id="dark" value="dark"/>
             </ion-item>
             <ion-item>
               <ion-label>{{$t('theme_light')}}</ion-label>
-              <ion-radio type="radio" id="light" value="custom"/>
+              <ion-radio type="radio" id="light" value="light"/>
             </ion-item>
           </ion-radio-group>
       </ion-list>

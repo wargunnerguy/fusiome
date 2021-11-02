@@ -1,4 +1,6 @@
 {
+  "et": "Eesti",
+  "en": "English",
   "locale_en": "english",
   "locale_et": "eesti",
   "locale_setting": "Language",
