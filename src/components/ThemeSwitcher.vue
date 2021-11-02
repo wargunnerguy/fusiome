@@ -21,11 +21,12 @@
 </template>
 
 <script>
-import {IonItem, IonLabel, IonRadio, IonRadioGroup, IonCardHeader, IonCardTitle, IonList} from "@ionic/vue";
+import {IonItem, IonLabel, IonRadio, IonRadioGroup, IonCardHeader, IonCardTitle, IonList, IonCard} from "@ionic/vue";
 
 export default {
   name: "ThemeSwitcher",
   components: {
+    IonCard,
     IonList,
     IonRadio,
     IonRadioGroup,
