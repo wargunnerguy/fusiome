@@ -4,37 +4,39 @@
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>
-            Welcome
+            {{ $t('welcome') }}
           </ion-card-subtitle>
           <ion-card-title>
-            Sign In
+            {{ $t('sign_in') }}
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-item>
             <ion-label
                 name="email"
-                position="floating">E-mail
+                position="floating">
+            {{ $t('email') }}
             </ion-label>
             <ion-input
                 v-model="email"
-                placeholder="Enter E-mail.."
+                :placeholder="$t('enter_email')"
                 required></ion-input>
           </ion-item>
           <ion-item>
             <ion-label
                 name="password"
-                position="floating">Password
+                position="floating">
+            {{ $t('password') }}
             </ion-label>
             <ion-input
                 v-model="password"
                 type=password
-                placeholder="Enter Password.."
+                :placeholder="$t('enter_password')"
                 required>
             </ion-input>
           </ion-item>
           <ion-buttons>
-            <ion-button type="submit">Sign in</ion-button>
+            <ion-button type="submit">{{ $t('sign_in') }}</ion-button>
           </ion-buttons>
         </ion-card-content>
       </ion-card>

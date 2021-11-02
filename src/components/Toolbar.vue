@@ -30,7 +30,7 @@ export default {
       let menuItemsLeft = []
       if (this.userIsAuthenticated) {
         menuItemsLeft = [
-          {icon: '', title: 'Fusiomes', link: '/'},
+          {icon: '', title: this.$t("fusiomes"), link: '/'},
           //TODO add searchbar
         ]
       }
@@ -44,8 +44,8 @@ export default {
       if (this.userIsAuthenticated) {
         menuItemsRight = [
           // TODO add signout
-          {icon: '', title: 'Profile', link: '/profile'},
-          {icon: '', title: 'Signout', link: '/'},
+          {icon: '', title: this.$t("profile"), link: '/profile'},
+          {icon: '', title: this.$t("sign_out"), link: '/'},
         ]
       }
       return menuItemsRight
