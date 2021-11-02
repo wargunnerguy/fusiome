@@ -1,0 +1,8 @@
+{
+  "name": "Fusiome",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "4f61b434"
+}
