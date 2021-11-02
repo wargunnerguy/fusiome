@@ -2,18 +2,26 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>
-        Theme
+        {{$t('theme_setting')}}
       </ion-card-title>
     </ion-card-header>
       <ion-list>
           <ion-radio-group v-model="theme">
             <ion-item>
-              <ion-label>default</ion-label>
+              <ion-label>{{$t('theme_default')}}</ion-label>
               <ion-radio type="radio" id="default" value="default"/>
             </ion-item>
             <ion-item>
-              <ion-label>custom</ion-label>
+              <ion-label>{{$t('theme_custom')}}</ion-label>
               <ion-radio type="radio" id="custom" value="custom"/>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{$t('theme_dark')}}</ion-label>
+              <ion-radio type="radio" id="dark" value="custom"/>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{$t('theme_light')}}</ion-label>
+              <ion-radio type="radio" id="light" value="custom"/>
             </ion-item>
           </ion-radio-group>
       </ion-list>

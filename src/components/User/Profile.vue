@@ -3,10 +3,10 @@
     <ion-card>
       <ion-card-header>
         <ion-card-subtitle>
-          Welcome
+          {{$t('welcome')}}
         </ion-card-subtitle>
         <ion-card-title>
-          Profile page
+          {{$t('profile_page')}}
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
@@ -18,7 +18,8 @@
         </ion-item>
       </ion-card-content>
     </ion-card>
-          <theme-switcher/>
+    <theme-switcher/>
+    <locale-switcher/>
   </base-layout>
 </template>
 
@@ -33,11 +34,13 @@ import {
   IonCardTitle,
 } from "@ionic/vue";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default {
   name: "Profile",
   components: {
     ThemeSwitcher,
+    LocaleSwitcher,
     IonCard,
     IonCardContent,
     IonCardHeader,

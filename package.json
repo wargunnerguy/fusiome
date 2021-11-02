@@ -2,12 +2,14 @@
   "name": "Fusiome",
   "version": "0.0.1",
   "private": true,
+  "description": "A platform for finding common likes",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
     "@capacitor/app": "1.0.2",
@@ -23,11 +25,13 @@
     "firebase": "^8.7.1",
     "swiper": "^6.8.4",
     "vue": "^3.0.0-0",
+    "vue-i18n": "^9.1.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@capacitor/cli": "3.1.1",
+    "@intlify/vue-i18n-loader": "^3.0.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -41,7 +45,7 @@
     "node-sass": "^6.0.1",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0",
+    "vue-cli-plugin-i18n": "~2.3.1",
     "vue-jest": "^5.0.0-0"
-  },
-  "description": "A platform for finding common likes"
+  }
 }

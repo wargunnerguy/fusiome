@@ -30,7 +30,7 @@
               <ion-card class="swiper-slide-card">
                 <ion-card-header>
                   <ion-card-subtitle>
-                    Statistics
+                    {{ $t('statistics_title') }}
                   </ion-card-subtitle>
                 </ion-card-header>
                 <ion-card-content>

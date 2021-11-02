@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button v-for="item in menuItemsLeft" :key="item.title" :router-link="item.link">{{ item.title }}</ion-button>
-      <ion-searchbar show-cancel-button="focus" cancel-button-text="Custom Cancel"></ion-searchbar>
+      <ion-searchbar show-cancel-button="focus" :cancel-button-text="$t('searchbar_cancel-button-text')" :placeholder="$t('searchbar_placeholder')"></ion-searchbar>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button v-for="item in menuItemsRight" :key="item.title" :router-link="item.link">{{ item.title }}
@@ -38,8 +38,8 @@ export default {
     },
     menuItemsRight() {
       let menuItemsRight = [
-        {icon: '', title: 'Sign up', link: '/signup'},
-        {icon: '', title: 'Sign in', link: '/signin'},
+        {icon: '', title: this.$t("sign_up"), link: '/signup'},
+        {icon: '', title: this.$t("sign_in"), link: '/signin'},
       ]
       if (this.userIsAuthenticated) {
         menuItemsRight = [

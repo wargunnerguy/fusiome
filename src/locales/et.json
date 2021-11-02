@@ -1,0 +1,17 @@
+{
+  "locale_en": "english",
+  "locale_et": "eesti",
+  "locale_setting": "Keel",
+  "searchbar_cancel-button-text": "Tühista",
+  "searchbar_placeholder": "Otsi..",
+  "sign_in": "Logi sisse",
+  "sign_up": "Registreeri",
+  "statistics_title": "Statistika",
+  "profile_page": "Profiili ülevaade",
+  "theme_custom": "kohandatud",
+  "theme_dark": "tume",
+  "theme_default": "tavaline",
+  "theme_light": "hele",
+  "theme_setting": "Teema",
+  "welcome": "Tervitus"
+}
