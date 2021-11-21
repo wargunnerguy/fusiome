@@ -41,6 +41,7 @@
         </ion-card-content>
       </ion-card>
     </form>
+    <alert v-if="error" :code="error.code" :text="error.message"></alert>
   </base-layout>
 </template>
 
@@ -57,6 +58,7 @@ import {
   IonItem,
   IonCardTitle,
 } from "@ionic/vue";
+import Alert from "@/components/Shared/Alert";
 
 export default {
   name: "Signin",
@@ -71,6 +73,7 @@ export default {
     IonButtons,
     IonButton,
     IonItem,
+    Alert
   },
   data() {
     return {
@@ -81,7 +84,10 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.getters.user
+      return this.$store.getters.user;
+    },
+    error() {
+      return this.$store.getters.error;
     }
   },
   watch: {
@@ -94,6 +100,9 @@ export default {
   methods: {
     onSignIn() {
       this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
+    },
+    onDismissed() {
+      this.$store.dispatch('clearError');
     }
   }
 }

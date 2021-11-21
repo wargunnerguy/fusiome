@@ -5,19 +5,23 @@ import Signup from "../components/User/Signup";
 import Signin from "../components/User/Signin";
 import Profile from "@/components/User/Profile";
 import FusiomeSlider from "@/components/Fusiome/FusiomeSlider";
+import AuthGuard from "./auth-guard"
 
 const routes = [
   {
     path: '/',
-    component: Fusiomes
+    component: Fusiomes,
+    beforeEnter: AuthGuard
   },
   {
     path: '/new',
-    component: CreateFusiome
+    component: CreateFusiome,
+    beforeEnter: AuthGuard
   },
   {
     path: '/:id',
-    component: FusiomeSlider
+    component: FusiomeSlider,
+    beforeEnter: AuthGuard
   },
   {
     path: '/signin',
@@ -29,7 +33,8 @@ const routes = [
   },
   {
     path: '/profile',
-    component: Profile
+    component: Profile,
+    beforeEnter: AuthGuard
   },
 ]
 

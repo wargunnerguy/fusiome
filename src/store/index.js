@@ -26,20 +26,33 @@ export const store = createStore({
                 dateAdded: '2021-03-27',
             }
         ],
-        user: null
+        user: null,
+        loading: false,
+        error: null
     },
     mutations: {
-        setUser (state, payload) {
+        setUser(state, payload) {
             state.user = payload
+        },
+        setLoading(state, payload) {
+            state.loading = payload;
+        },
+        setError(state, payload) {
+            state.error = payload;
+        },
+        clearError(state) {
+            state.error = null;
         }
     },
     actions: {
-        signUserUp ({commit}, payload) {
-            console.log(payload.email)
+        signUserUp({commit}, payload) {
+            commit('setLoading', true);
+            commit('clearError');
             // eslint-disable-next-line no-undef
             firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
                 .then(
                     user => {
+                        commit('setLoading', false);
                         const newUser = {
                             id: user.uid,
                             likedFusiomes: [],
@@ -51,14 +64,19 @@ export const store = createStore({
                 )
                 .catch(
                     error => {
-                        console.log(error)
+                        commit('setLoading', false);
+                        commit('setError', error);
+                        console.log(error);
                     }
                 )
         },
         signUserIn({commit}, payload) {
+            commit('setLoading', true);
+            commit('clearError')
             firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
                 .then(
                     user => {
+                        commit('setLoading', false);
                         const newUser = {
                             id: user.uid,
                             likedFusiomes: [],
@@ -70,9 +88,17 @@ export const store = createStore({
                 )
                 .catch(
                     error => {
+                        commit('setLoading', false);
+                        commit('setError', error);
                         console.log(error)
                     }
                 )
+        },
+        autoSignIn({commit}, payload) {
+            commit('setUser', {id: payload.uid, likedFusiomes: [], seenFusiomes: [], dislikedFusiomes: []})
+        },
+        clearError({commit}) {
+            commit('clearError');
         }
     },
     getters: {
@@ -92,8 +118,14 @@ export const store = createStore({
                 )
             }
         },
-        user (state) {
-            return state.user
+        user(state) {
+            return state.user;
+        },
+        loading(state) {
+            return state.loading;
+        },
+        error(state) {
+            return state.error;
         }
     }
 })

@@ -49,7 +49,7 @@ const app = createApp(App)
     .use(IonicVue)
     .use(router)
     .use(store);
-app.component('base-layout', BaseLayout)
+app.component('base-layout', BaseLayout);
 
 router.isReady().then(() => {
     app.mount('#app');
