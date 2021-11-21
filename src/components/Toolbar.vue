@@ -2,10 +2,13 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button v-for="item in menuItemsLeft" :key="item.title" :router-link="item.link">{{ item.title }}</ion-button>
-      <ion-searchbar show-cancel-button="focus" :cancel-button-text="$t('searchbar_cancel-button-text')" :placeholder="$t('searchbar_placeholder')"></ion-searchbar>
+      <ion-searchbar show-cancel-button="focus" :cancel-button-text="$t('searchbar_cancel-button-text')"
+                     :placeholder="$t('searchbar_placeholder')"></ion-searchbar>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button v-for="item in menuItemsRight" :key="item.title" :router-link="item.link">{{ item.title }}
+      </ion-button>
+      <ion-button v-if="userIsAuthenticated" @click="onLogOut" >{{ $t("sign_out") }}
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -43,15 +46,19 @@ export default {
       ]
       if (this.userIsAuthenticated) {
         menuItemsRight = [
-          // TODO add signout
           {icon: '', title: this.$t("profile"), link: '/profile'},
-          {icon: '', title: this.$t("sign_out"), link: '/'},
         ]
       }
       return menuItemsRight
     },
     userIsAuthenticated() {
       return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+    }
+  },
+  methods: {
+    onLogOut() {
+      this.$store.dispatch('logout');
+      this.$router.push('/')
     }
   }
 }

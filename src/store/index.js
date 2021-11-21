@@ -97,6 +97,10 @@ export const store = createStore({
         autoSignIn({commit}, payload) {
             commit('setUser', {id: payload.uid, likedFusiomes: [], seenFusiomes: [], dislikedFusiomes: []})
         },
+        logout({commit}) {
+            firebase.auth().signOut();
+            commit('setUser', null);
+        },
         clearError({commit}) {
             commit('clearError');
         }

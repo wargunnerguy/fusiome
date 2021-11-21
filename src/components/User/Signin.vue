@@ -15,7 +15,7 @@
             <ion-label
                 name="email"
                 position="floating">
-            {{ $t('email') }}
+              {{ $t('email') }}
             </ion-label>
             <ion-input
                 v-model="email"
@@ -26,7 +26,7 @@
             <ion-label
                 name="password"
                 position="floating">
-            {{ $t('password') }}
+              {{ $t('password') }}
             </ion-label>
             <ion-input
                 v-model="password"
