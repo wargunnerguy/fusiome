@@ -1,8 +1,13 @@
 module.exports = {
-  pluginOptions: {
-    devServer: {
-      host: '158.193.102.255'
+  publicPath: process.env.NODE_ENV === 'production' ? '/fusiome/' : '/',
+  pages: {
+    index: {
+      // entry for the page
+      entry: 'src/main.js',
+      title: 'Promostan',
     },
+  },
+  pluginOptions: {
     i18n: {
       locale: 'en',
       fallbackLocale: 'en',
